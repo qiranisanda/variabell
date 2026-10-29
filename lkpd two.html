@@ -1,0 +1,639 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LKPD JavaScript</title>
+
+  <style>
+    :root {
+      --navy: #102a56;
+      --blue: #398bc9;
+      --sky: #eaf6ff;
+      --white: #ffffff;
+      --text: #20324d;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--sky);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(120deg, #102a56, #398bc9);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header h1 {
+      margin-bottom: 10px;
+      font-size: 32px;
+    }
+
+    header p {
+      color: #eaf6ff;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 25px auto;
+      padding: 0 15px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      margin-bottom: 20px;
+      border-radius: 16px;
+      border: 1px solid #d7e8f7;
+      box-shadow: 0 5px 18px #102a5610;
+    }
+
+    h2 {
+      color: var(--navy);
+      border-bottom: 2px solid #d7e8f7;
+      padding-bottom: 10px;
+    }
+
+    h3 {
+      color: var(--blue);
+    }
+
+    .menu a {
+      display: inline-block;
+      text-decoration: none;
+      color: var(--navy);
+      background: white;
+      border: 1px solid #d7e8f7;
+      border-radius: 8px;
+      padding: 8px 12px;
+      margin: 4px;
+    }
+
+    .menu a:hover {
+      background: var(--navy);
+      color: white;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 11px;
+      margin: 5px 0 12px;
+      border: 1px solid #c8dced;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    button {
+      background: var(--navy);
+      color: white;
+      border: none;
+      padding: 11px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 5px 3px;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: var(--blue);
+    }
+
+    pre {
+      background: #0d1c35;
+      color: #bfe4ff;
+      padding: 16px;
+      border-radius: 10px;
+      overflow-x: auto;
+    }
+
+    .output {
+      background: #0d1c35;
+      color: #bfe4ff;
+      padding: 14px;
+      margin-top: 10px;
+      border-radius: 8px;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    .jawaban {
+      background: #eaf6ff;
+      border-left: 4px solid #398bc9;
+      padding: 12px;
+      margin: 12px 0;
+      border-radius: 6px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+    }
+
+    th, td {
+      border: 1px solid #d7e8f7;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background: #dcefff;
+      color: var(--navy);
+    }
+
+    footer {
+      text-align: center;
+      background: var(--navy);
+      color: white;
+      padding: 22px;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 25px;
+      }
+
+      .card {
+        padding: 17px;
+      }
+
+      table {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>LKPD JavaScript</h1>
+  <p>Input, Output & Operator Aritmatika</p>
+  <p>Belajar Coding dengan Cara Menyenangkan 💙</p>
+</header>
+
+<div class="container">
+
+  <section class="card">
+    <h2>Identitas Siswa</h2>
+
+    <label>Nama:</label>
+    <input id="namaSiswa" value="Risanda Maulida Alqirani">
+
+    <label>Kelas:</label>
+    <input id="kelasSiswa"value="X PPLG 2">
+
+    <label>Tanggal:</label>
+    <input type="date" id="tanggal">
+  </section>
+
+  <section class="card">
+    <h2>Daftar Aktivitas</h2>
+    <nav class="menu">
+      <a href="#aktivitas1">Aktivitas 1</a>
+      <a href="#aktivitas2">Aktivitas 2</a>
+      <a href="#aktivitas3">Aktivitas 3</a>
+      <a href="#aktivitas4">Aktivitas 4</a>
+      <a href="#aktivitas5">Aktivitas 5</a>
+      <a href="#aktivitas6">Aktivitas 6</a>
+      <a href="#aktivitas7">Aktivitas 7</a>
+      <a href="#aktivitas8">Aktivitas 8</a>
+      <a href="#aktivitas9">Aktivitas 9</a>
+      <a href="#asesmen">Asesmen</a>
+    </nav>
+  </section>
+
+  <section class="card" id="aktivitas1">
+    <h2>Aktivitas 1 — Prediksi</h2>
+
+    <pre><code>let a = 10;
+let b = 5;
+
+console.log(a + b);
+console.log(a - b);
+console.log(a * b);
+console.log(a / b);</code></pre>
+
+    <table>
+      <tr>
+        <th>Operasi</th>
+        <th>Jawaban</th>
+      </tr>
+      <tr><td>a + b</td><td>15</td></tr>
+      <tr><td>a - b</td><td>5</td></tr>
+      <tr><td>a * b</td><td>50</td></tr>
+      <tr><td>a / b</td><td>2</td></tr>
+    </table>
+
+    <button onclick="aktivitas1()">Jalankan Kode</button>
+    <div class="output" id="output1">Hasil muncul di sini.</div>
+
+    <div class="jawaban">
+      <b>Jawaban:</b> Ya, prediksi benar jika hasil
+      prediksi sesuai. Operator aritmatika digunakan
+      untuk melakukan perhitungan.
+    </div>
+  </section>
+
+  <section class="card" id="aktivitas2">
+    <h2>Aktivitas 2 — Eksperimen</h2>
+
+    <pre><code>let a = 20;
+let b = 4;
+
+console.log(a + b);
+console.log(a - b);
+console.log(a * b);
+console.log(a / b);
+console.log(a % b);</code></pre>
+
+    <div class="jawaban">
+      <b>Jawaban:</b>
+      <ul>
+        <li>Penjumlahan = 24</li>
+        <li>Pengurangan = 16</li>
+        <li>Perkalian = 80</li>
+        <li>Pembagian = 5</li>
+        <li>Sisa pembagian = 0</li>
+      </ul>
+      Operator % digunakan untuk mencari sisa pembagian.
+    </div>
+
+    <button onclick="aktivitas2()">Jalankan Kode</button>
+    <div class="output" id="output2"></div>
+  </section>
+
+  <section class="card" id="aktivitas3">
+    <h2>Aktivitas 3 — Input dengan prompt()</h2>
+
+    <pre><code>let nama = prompt("Masukkan nama:");
+console.log(nama);
+
+let umur = prompt("Masukkan umur:");
+console.log(umur);</code></pre>
+
+    <div class="jawaban">
+      <b>Jawaban:</b> prompt() digunakan untuk
+      meminta input dari pengguna melalui kotak dialog.
+    </div>
+
+    <button onclick="aktivitas3()">Coba Input</button>
+    <div class="output" id="output3"></div>
+  </section>
+
+  <section class="card" id="aktivitas4">
+    <h2>Aktivitas 4 — Menghitung Umur</h2>
+
+    <pre><code>let tahunLahir = Number(
+  prompt("Masukkan tahun lahir:")
+);
+
+let tahunSekarang = 2026;
+let umur = tahunSekarang - tahunLahir;
+
+console.log(umur);</code></pre>
+
+    <label>Tahun lahir:</label>
+    <input type="number" id="tahunLahir"value="2011">
+
+    <button onclick="aktivitas4()">Hitung Umur</button>
+    <div class="output" id="output4"></div>
+  </section>
+
+  <section class="card" id="aktivitas5">
+    <h2>Aktivitas 5 — Mesin Kasir Mini</h2>
+
+    <label>Harga barang (Rp):</label>
+    <input type="number" id="harga"
+           value="5000" min="0">
+
+    <label>Jumlah barang:</label>
+    <input type="number" id="jumlah"
+           value="4" min="0">
+
+    <button onclick="aktivitas5()">Hitung Total</button>
+    <div class="output" id="output5"></div>
+
+    <div class="jawaban">
+      <b>Jawaban LKPD:</b> Rp5.000 × 4 =
+      <b>Rp20.000</b>.
+    </div>
+  </section>
+
+  <section class="card" id="aktivitas6">
+    <h2>Aktivitas 6 — Think Pair Share</h2>
+
+    <div class="jawaban">
+      <b>THINK:</b> Mengapa membutuhkan variabel total?
+      <p>Variabel total menyimpan hasil perhitungan
+      harga dikali jumlah barang.</p>
+    </div>
+
+    <div class="jawaban">
+      <b>PAIR:</b> Contoh jawaban: Ya, jika jawaban
+      pasangan sama. Sesuaikan dengan hasil diskusi.
+    </div>
+
+    <div class="jawaban">
+      <b>SHARE:</b> Variabel membantu menyimpan data
+      dan hasil perhitungan agar program lebih mudah
+      dipahami dan digunakan kembali.
+    </div>
+  </section>
+
+  <section class="card" id="aktivitas7">
+    <h2>Aktivitas 7 — Warung Digital</h2>
+
+    <label>Nama makanan:</label>
+    <input type="text" id="makanan"
+           value="Nasi goreng">
+
+    <label>Harga satuan (Rp):</label>
+    <input type="number" id="hargaMakanan"
+           value="15000" min="0">
+
+    <label>Jumlah:</label>
+    <input type="number" id="jumlahMakanan"
+           value="2" min="0">
+
+    <button onclick="aktivitas7()">Hitung Diskon 10%</button>
+    <div class="output" id="output7"></div>
+
+    <h3>Kode JavaScript</h3>
+    <pre><code>let makanan = prompt("Nama makanan:");
+let harga = Number(prompt("Harga:"));
+let jumlah = Number(prompt("Jumlah:"));
+
+let total = harga * jumlah;
+let diskon = total * 10 / 100;
+let bayar = total - diskon;
+
+console.log("Makanan:", makanan);
+console.log("Total:", total);
+console.log("Diskon:", diskon);
+console.log("Total bayar:", bayar);</code></pre>
+  </section>
+
+  <section class="card" id="aktivitas8">
+    <h2>Aktivitas 8 — Debugging</h2>
+
+    <div class="jawaban">
+      <b>Kesalahan:</b> Nama variabel
+      <code>total harga</code> memiliki spasi.
+      Nama variabel seperti itu tidak valid.
+    </div>
+
+    <pre><code>let harga = 5000;
+let jumlah = 3;
+
+let totalHarga = harga * jumlah;
+console.log(totalHarga);</code></pre>
+
+    <div class="jawaban">
+      <b>Perbaikan:</b> Gunakan <code>totalHarga</code>.
+      Hasilnya adalah <b>15000</b>.
+    </div>
+
+    <button onclick="aktivitas8()">Jalankan Kode</button>
+    <div class="output" id="output8"></div>
+  </section>
+
+  <section class="card" id="aktivitas9">
+    <h2>Aktivitas 9 — Kalkulator Tabungan</h2>
+
+    <label>Uang awal (Rp):</label>
+    <input type="number" id="uangAwal"
+           value="10000" min="0">
+
+    <label>Tabungan hari pertama (Rp):</label>
+    <input type="number" id="hari1"
+           value="5000" min="0">
+
+    <label>Tabungan hari kedua (Rp):</label>
+    <input type="number" id="hari2"
+           value="7000" min="0">
+
+    <label>Tabungan hari ketiga (Rp):</label>
+    <input type="number" id="hari3"
+           value="3000" min="0">
+
+    <button onclick="aktivitas9()">Hitung Tabungan</button>
+    <div class="output" id="output9"></div>
+
+    <h3>Kode JavaScript</h3>
+    <pre><code>let uangAwal = Number(prompt("Uang awal:"));
+let hari1 = Number(prompt("Tabungan hari pertama:"));
+let hari2 = Number(prompt("Tabungan hari kedua:"));
+let hari3 = Number(prompt("Tabungan hari ketiga:"));
+
+let totalTabungan = uangAwal + hari1 + hari2 + hari3;
+
+console.log("Total tabungan:", totalTabungan);</code></pre>
+  </section>
+
+  <section class="card" id="asesmen">
+    <h2>Asesmen Formatif</h2>
+
+    <div class="jawaban">
+      <b>1. Output a = 8, b = 2, a + b?</b>
+      <p>Jawaban: 10.</p>
+    </div>
+
+    <div class="jawaban">
+      <b>2. Output a = 10, b = 3, a % b?</b>
+      <p>Jawaban: 1.</p>
+    </div>
+
+    <div class="jawaban">
+      <b>3. Apa fungsi prompt()?</b>
+      <p>Meminta input dari pengguna melalui kotak dialog.</p>
+    </div>
+
+    <div class="jawaban">
+      <b>4. Hitung luas persegi panjang dengan panjang
+      10 dan lebar 5.</b>
+      <pre><code>let panjang = 10;
+let lebar = 5;
+let luas = panjang * lebar;
+console.log(luas);</code></pre>
+      Jawaban: 50 satuan persegi.
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Refleksi Pembelajaran</h2>
+
+    <label>Hari ini saya menyadari bahwa...</label>
+    <textarea>Variabel menyimpan data dan operator aritmatika digunakan untuk perhitungan.</textarea>
+
+    <label>Materi ini dapat digunakan untuk...</label>
+    <textarea>Membuat kalkulator, menghitung belanja, dan menghitung tabungan.</textarea>
+
+    <label>Bagian pembelajaran yang paling saya sukai...</label>
+    <textarea>Mencoba membuat program yang menghitung secara otomatis.</textarea>
+  </section>
+
+  <section class="card">
+    <h2>Exit Ticket</h2>
+
+    <p><b>1. Satu hal yang sudah saya kuasai:</b></p>
+    <p>Menggunakan variabel dan operator aritmatika.</p>
+
+    <p><b>2. Satu hal yang masih membingungkan:</b></p>
+    <p>Perbedaan tipe data string dan number.</p>
+
+    <p><b>3. Satu hal yang ingin saya coba:</b></p>
+    <p>Membuat program kasir dengan banyak barang.</p>
+
+    <button onclick="selesai()">Selesaikan LKPD</button>
+    <div class="output" id="selesaiOutput"></div>
+  </section>
+
+</div>
+
+<footer>
+  <p>LKPD JavaScript — Input, Output & Aritmatika</p>
+  <p>Sky Blue × Navy | Dasar-Dasar PPLG</p>
+</footer>
+
+<script>
+  function aktivitas1() {
+    let a = 10;
+    let b = 5;
+
+    document.getElementById("output1").textContent =
+      (a + b) + "\n" +
+      (a - b) + "\n" +
+      (a * b) + "\n" +
+      (a / b);
+  }
+
+  function aktivitas2() {
+    let a = 20;
+    let b = 4;
+
+    document.getElementById("output2").textContent =
+      (a + b) + "\n" +
+      (a - b) + "\n" +
+      (a * b) + "\n" +
+      (a / b) + "\n" +
+      (a % b);
+  }
+
+  function aktivitas3() {
+    let nama = prompt("Masukkan nama:","Risanda");
+    if (nama === null) return;
+
+    let umur = prompt("Masukkan umur:","15");
+    if (umur === null) return;
+
+    document.getElementById("output3").textContent =
+      "Nama: " + nama + "\nUmur: " + umur;
+  }
+
+  function aktivitas4() {
+    let tahun = Number(
+      document.getElementById("tahunLahir",).value
+    );
+
+    if (!tahun || tahun < 1900 || tahun > 2026) {
+      document.getElementById("output4").textContent =
+        "Masukkan tahun lahir yang valid.";
+      return;
+    }
+
+    let umur = 2026 - tahun;
+
+    document.getElementById("output4").textContent =
+      "Perkiraan umur: " + umur + " tahun.";
+  }
+
+  function aktivitas5() {
+    let harga = Number(
+      document.getElementById("harga").value
+    );
+    let jumlah = Number(
+      document.getElementById("jumlah").value
+    );
+
+    let total = harga * jumlah;
+
+    document.getElementById("output5").textContent =
+      "Harga: Rp" + harga.toLocaleString("id-ID") +
+      "\nJumlah: " + jumlah +
+      "\nTotal: Rp" + total.toLocaleString("id-ID");
+  }
+
+  function aktivitas7() {
+    let makanan =
+      document.getElementById("makanan").value;
+    let harga = Number(
+      document.getElementById("hargaMakanan").value
+    );
+    let jumlah = Number(
+      document.getElementById("jumlahMakanan").value
+    );
+
+    let total = harga * jumlah;
+    let diskon = total * 10 / 100;
+    let bayar = total - diskon;
+
+    document.getElementById("output7").textContent =
+      "Makanan: " + makanan +
+      "\nTotal: Rp" + total.toLocaleString("id-ID") +
+      "\nDiskon 10%: Rp" + diskon.toLocaleString("id-ID") +
+      "\nTotal bayar: Rp" + bayar.toLocaleString("id-ID");
+  }
+
+  function aktivitas8() {
+    let harga = 5000;
+    let jumlah = 3;
+    let totalHarga = harga * jumlah;
+
+    document.getElementById("output8").textContent =
+      "Total harga: Rp" +
+      totalHarga.toLocaleString("id-ID");
+  }
+
+  function aktivitas9() {
+    let uangAwal = Number(
+      document.getElementById("uangAwal").value
+    );
+    let hari1 = Number(
+      document.getElementById("hari1").value
+    );
+    let hari2 = Number(
+      document.getElementById("hari2").value
+    );
+    let hari3 = Number(
+      document.getElementById("hari3").value
+    );
+
+    let total = uangAwal + hari1 + hari2 + hari3;
+
+    document.getElementById("output9").textContent =
+      "Total tabungan: Rp" + total.toLocaleString("id-ID");
+  }
+
+  function selesai() {
+    document.getElementById("selesaiOutput").textContent =
+      "LKPD selesai! Periksa kembali jawabanmu sebelum dikumpulkan.";
+  }
+
+  document.getElementById("tanggal").value =
+    new Date().toLocaleDateString("en-CA");
+</script>
+
+</body>
+</html>
